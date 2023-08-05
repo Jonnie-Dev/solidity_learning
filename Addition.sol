@@ -1,4 +1,4 @@
-// Now that you have learnt how to do a few things in Solidity, let’s try creating our own smart contract from scratch! We will be creating a simple smart contract that allows you to add 2 numbers together, with the addition of a few checks. 
+// Now that you have learnt how to do a few things in Solidity, let’s try creating our own smart contract from scratch! We will be creating a simple smart contract that allows you to add 2 numbers together, with the addition of a few checks.
 
 // In the file explorer, create a new empty file called Addition.sol
 //Declare the solidity version as 0.8.3
@@ -12,9 +12,9 @@
 // In the function, add a require() statement that checks if y > x, throwing an error message of ”y should be larger than x” if the check fails.
 // After the require() statement, create a new variable z of type uint256 and assign it the value of x + y.
 // Lastly, return z
-// 
+//
 // And we’re done coding the smart contract!
-// 
+//
 // Solution:
 
 // SPDX-License-Identifier: MIT
@@ -24,7 +24,7 @@ contract SolidityFundamentals1 {
     address public owner;
     uint256 public x = 5;
 
-    constructor(){
+    constructor() {
         owner = msg.sender;
     }
 
@@ -38,7 +38,7 @@ contract SolidityFundamentals1 {
         _;
     }
 
-    function add(uint256 y) public view onlyOwner check(y) returns (uint256){
+    function add(uint256 y) public view onlyOwner check(y) returns (uint256) {
         uint256 z = x + y;
         return z;
     }
